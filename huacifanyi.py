@@ -8,7 +8,7 @@ kPunc = string.punctuation + ' ' +'’'
 
 def translate_en2zh(cmd):
     os.system(cmd)
-    print('========\n')
+    print('===============================\n')
 
 def char_is_valid(char:str) -> bool:
     return char.encode('utf-8').isalpha() or char.encode('utf-8').isdigit(
@@ -56,6 +56,7 @@ def main():
             print('debug:', text)
             continue
         if text != last_text:
+            os.system('reset')
             cmd = trans_config % '\'%s\'' % text
             last_text = text
 
